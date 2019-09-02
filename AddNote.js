@@ -42,12 +42,16 @@ class AddNote extends Component {
            return <option value = {folder.name}>{folder.name}</option>
         })
         return(
-            <div className='select_list'>
-                <select className='note_form_dropdown' name = "folders" onChange = {(e) =>this.updateList(e.target.value)}>    
+            <>
+            <label htmlFor='list'></label>
+            <div className='select_list' name = "folders" id='list'>
+                
+                <select className='note_form_dropdown'  name='list' onChange = {(e) =>this.updateList(e.target.value)}>    
                 <option value ='null'>Select a folder</option>
                 {folderList}
                 </select>
            </div>
+           </>
         )
     }
      getDateFormat(date) {
